@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useGlobalContext } from './context';
 
 const Submenu = () => {
-	const { isSubmenuOpen, location } = useGlobalContext();
+	const { isSubmenuOpen, location, page: { page, links } } = useGlobalContext();
 
 	const container = useRef(null);
 
@@ -17,7 +17,7 @@ const Submenu = () => {
 	);
 	return (
 		<aside ref={container} className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}>
-			submenu component
+			<h4>{page}</h4>
 		</aside>
 	);
 };
